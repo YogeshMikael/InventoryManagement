@@ -1,0 +1,17 @@
+﻿@model InventoryManagementApplication.Models.Item
+
+@{
+    ViewData["Title"] = "Delete Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>Delete Item</h2>
+    <p>Are you sure you want to delete the item: <strong>@Model.Name</strong>?</p>
+
+    <form asp-action="DeleteconfirmationItems" asp-controller="Items" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a asp-action="Items" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
