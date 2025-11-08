@@ -14,21 +14,20 @@ namespace InventoryManagementApplication.Controllers
             _context = context;
         }
 
-        // GET: /Items
         public IActionResult Items()
         {
             var items = _context.Items.ToList();
             return View("Items", items);
         }
 
-        // GET: /CreateItems
+      
         [HttpGet]
         public IActionResult CreateItems()
         {
             return View("CreateItems");
         }
 
-        // POST: /CreateItems
+   
         [HttpPost]
         public IActionResult CreateItems(Item item)
         {
@@ -72,7 +71,6 @@ namespace InventoryManagementApplication.Controllers
             return View("updateItems", item);
         }
 
-        // GET: /DeleteconfirmationItems/{id}
         [HttpGet]
         public IActionResult DeleteconfirmationItems(int id)
         {
@@ -89,7 +87,6 @@ namespace InventoryManagementApplication.Controllers
             }
         }
 
-        // POST: /DeleteconfirmationItems
         [HttpPost, ActionName("DeleteconfirmationItems")]
         public IActionResult DeleteConfirmed(int id)
         {
